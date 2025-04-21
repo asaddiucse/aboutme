@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="MD Asaduzzaman - WordPress & Frontend Developer Portfolio">
+    <meta name="author" content="MD Asaduzzaman">
+
+    <title>MD Asaduzzaman - WordPress & Frontend Developer</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #2c3e50;
+        --accent-color: #e74c3c;
+        --light-color: #ecf0f1;
+        --dark-color: #2c3e50;
+      }
+      
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        line-height: 1.6;
+      }
+      
+      .navbar {
+        background-color: var(--secondary-color);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      
+      .navbar-brand {
+        color: white !important;
+        font-weight: bold;
+      }
+      
+      .nav-link {
+        color: white !important;
+        position: relative;
+      }
+      
+      .nav-link span {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .nav-link span::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: width 0.3s ease;
+      }
+      
+      .nav-link:hover span::after {
+        width: 100%;
+      }
+      
+      /* Hero Section */
+      #about {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        color: white;
+        padding: 150px 0 100px;
+      }
+      
+      .small-text {
+        color: rgba(255,255,255,0.8);
+        font-size: 1.1rem;
+      }
+      
+      .animated-text {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .custom-btn {
+        border: 2px solid white;
+        color: white;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+      
+      .custom-btn:hover {
+        background: white;
+        color: var(--secondary-color);
+      }
+      
+      .custom-btn-bg {
+        background: var(--accent-color);
+        border-color: var(--accent-color);
+      }
+      
+      .custom-btn-bg:hover {
+        background: transparent;
+        color: white;
+      }
+      
+      /* Skills Section */
+      .skill-card {
+        background: white;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
+      
+      .skill-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+      
+      /* Experience Section */
+      .experience-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      }
+      
+      .experience-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 20px;
+      }
+      
+      .experience-body {
+        padding: 20px;
+      }
+      
+      .experience-body ul {
+        padding-left: 20px;
+      }
+      
+      .experience-body li {
+        margin-bottom: 8px;
+      }
+      
+      /* Project Section */
+      .project-info {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+      
+      .project-info img {
+        transition: transform 0.5s ease;
+      }
+      
+      .project-info:hover img {
+        transform: scale(1.1);
+      }
+      
+      /* Contact Section */
+      #contact {
+        background: var(--light-color);
+      }
+      
+      .contact-info {
+        background: var(--secondary-color);
+        color: white;
+        padding: 30px;
+        border-radius: 8px;
+      }
+      
+      .contact-form {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      }
+      
+      .submit-btn {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
+      }
+      
+      .submit-btn:hover {
+        background: var(--secondary-color);
+      }
+      
+      /* Footer */
+      footer {
+        background: var(--secondary-color);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> MD Asaduzzaman</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link"><span data-hover="About">About</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link"><span data-hover="Skills">Skills</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#experience" class="nav-link"><span data-hover="Experience">Experience</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link"><span data-hover="Contact">Contact</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ABOUT -->
+    <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-7 col-md-12 col-12 d-flex align-items-center">
+                    <div class="about-text">
+                        <small class="small-text">Welcome to <span class="mobile-block">my portfolio website!</span></small>
+                        <h1 class="animated animated-text">
+                            <span class="mr-2">Hey, I'm</span>
+                                <div class="animated-info">
+                                    <span class="animated-item">MD Asaduzzaman</span>
+                                    <span class="animated-item">WordPress Developer</span>
+                                    <span class="animated-item">Frontend Specialist</span>
+                                </div>
+                        </h1>
+
+                        <p>Passionate WordPress Developer with 4+ years of experience in building high-performance, SEO-optimized websites. Specialized in WordPress, WooCommerce, and page builders like Elementor and Bricks.</p>
+                        
+                        <div class="custom-btn-group mt-4">
+                          <a href="#" class="btn mr-lg-2 custom-btn"><i class='uil uil-file-alt'></i> Download Resume</a>
+                          <a href="#contact" class="btn custom-btn custom-btn-bg custom-btn-link">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-12 col-12">
+                    <div class="about-image svg">
+                        <img src="https://via.placeholder.com/500x500" class="img-fluid rounded-circle" alt="MD Asaduzzaman">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="project py-5" id="skills">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 text-center mx-auto col-12">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>My Skills & Expertise</h2>
+                    </div>
+
+                    <div class="row mt-5">
+                        <!-- Frontend Skills -->
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-html5"></i>
+                                </div>
+                                <h3>HTML5</h3>
+                                <p>Semantic markup, accessibility standards, and modern HTML5 features.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-css3-simple"></i>
+                                </div>
+                                <h3>CSS3</h3>
+                                <p>Responsive design, Flexbox, Grid, animations and transitions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-javascript"></i>
+                                </div>
+                                <h3>JavaScript</h3>
+                                <p>ES6+, DOM manipulation, AJAX, and modern JavaScript frameworks.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- WordPress Skills -->
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-wordpress"></i>
+                                </div>
+                                <h3>WordPress</h3>
+                                <p>Custom themes, plugins, and WooCommerce development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-shopping-cart-alt"></i>
+                                </div>
+                                <h3>WooCommerce</h3>
+                                <p>Store setup, customization, and payment gateway integration.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-puzzle-piece"></i>
+                                </div>
+                                <h3>Elementor</h3>
+                                <p>Custom widgets, dynamic content, and performance optimization.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Other Skills -->
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-brackets-curly"></i>
+                                </div>
+                                <h3>Bricks Builder</h3>
+                                <p>Custom templates, dynamic data, and performance-focused builds.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-window"></i>
+                                </div>
+                                <h3>Wix</h3>
+                                <p>Custom designs, Velo development, and business solutions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 mb-4">
+                            <div class="skill-card">
+                                <div class="skill-icon">
+                                    <i class="uil uil-bootstrap"></i>
+                                </div>
+                                <h3>Bootstrap</h3>
+                                <p>Responsive layouts, custom components, and theming.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="resume py-5 d-lg-flex justify-content-center align-items-center" id="experience">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="mb-4 text-center">Professional Experience</h2>
+                    
+                    <div class="row">
+                        <!-- Experience 1 -->
+                        <div class="col-lg-6 col-md-6 col-12 mb-4">
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <h3>WordPress Developer</h3>
+                                    <p>Zufaa Inc. | Apr 2021 – Present</p>
+                                </div>
+                                <div class="experience-body">
+                                    <ul>
+                                        <li>Developed 50+ custom WordPress websites with WooCommerce, Elementor, and Bricks</li>
+                                        <li>Improved website speed by 60%+ through caching and optimization</li>
+                                        <li>Secured websites against malware & vulnerabilities</li>
+                                        <li>Integrated payment gateways and CRM tools via REST API</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Experience 2 -->
+                        <div class="col-lg-6 col-md-6 col-12 mb-4">
+                            <div class="experience-card">
+                                <div class="experience-header">
+                                    <h3>Frontend Web Developer</h3>
+                                    <p>Gramenophone | Sep 2019 – Dec 2020</p>
+                                </div>
+                                <div class="experience-body">
+                                    <ul>
+                                        <li>Built responsive, interactive UIs with HTML5, CSS3, and JavaScript</li>
+                                        <li>Implemented pixel-perfect, user-friendly interfaces</li>
+                                        <li>Collaborated with designers and backend developers</li>
+                                        <li>Optimized frontend performance and cross-browser compatibility</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="project py-5" id="project">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-11 text-center mx-auto col-12">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Recent Projects</h2>
+                    </div>
+
+                    <div class="owl-carousel owl-theme mt-5">
+                        <div class="item">
+                            <div class="project-info">
+                                <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="Jatareausa.com">
+                                <div class="project-caption p-3">
+                                    <h4>Jatareausa.com</h4>
+                                    <p>Custom WooCommerce store with payment gateways</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="MFFoodmart.com">
+                                <div class="project-caption p-3">
+                                    <h4>MFFoodmart.com</h4>
+                                    <p>Food product e-commerce platform</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="elitecarehvac.com">
+                                <div class="project-caption p-3">
+                                    <h4>elitecarehvac.com</h4>
+                                    <p>HVAC services with booking functionality</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="Owlmind.tech">
+                                <div class="project-caption p-3">
+                                    <h4>Owlmind.tech</h4>
+                                    <p>Tech consultancy site</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="project-info">
+                                <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="Squarelimo.com">
+                                <div class="project-caption p-3">
+                                    <h4>Squarelimo.com</h4>
+                                    <p>Luxury transport booking system</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact py-5" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 mr-lg-5 col-12">
+            <div class="contact-info">
+              <h3 class="mb-3">Get in touch</h3>
+              <p class="mb-2"><i class="uil uil-envelope mr-2"></i> asaddiucse@hmail.com</p>
+              <p class="mb-2"><i class="uil uil-linkedin-alt mr-2"></i> LinkedIn Profile</p>
+              
+              <h3 class="mt-4 mb-3">My Expertise</h3>
+              <p>WordPress | PHP | JavaScript | WooCommerce | Elementor | Bricks | WPBakery | Wix | Security & Performance</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-12">
+            <div class="contact-form">
+              <h2 class="mb-4">Interested to work together?</h2>
+
+              <form action="" method="get">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" id="name" required>
+                  </div>
+
+                  <div class="col-lg-6 col-12">
+                    <input type="email" class="form-control" name="email" placeholder="Email" id="email" required>
+                  </div>
+
+                  <div class="col-12">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" id="subject" required>
+                  </div>
+
+                  <div class="col-12">
+                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message" required></textarea>
+                  </div>
+
+                  <div class="ml-lg-auto col-lg-5 col-12">
+                    <input type="submit" class="form-control submit-btn" value="Send Message">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+     <footer class="footer py-5">
+          <div class="container">
+               <div class="row">
+                    <div class="col-lg-12 col-12">                                
+                        <p class="copyright-text text-center">Copyright &copy; 2023 MD Asaduzzaman. All rights reserved</p>
+                    </div>
+               </div>
+          </div>
+     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script>
+      $(document).ready(function(){
+        // Animated text
+        if($('.animated-text').length) {
+          let typed = new Typed('.animated-text', {
+            strings: ["MD Asaduzzaman", "WordPress Developer", "Frontend Specialist"],
+            loop: true,
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 1500,
+          });
+        }
+        
+        // Owl Carousel
+        $('.owl-carousel').owlCarousel({
+          items: 3,
+          loop: true,
+          margin: 20,
+          autoplay: true,
+          autoplayTimeout: 3000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1
+            },
+            768: {
+              items: 2
+            },
+            992: {
+              items: 3
+            }
+          }
+        });
+        
+        // Smooth scroll
+        $('a[href*="#"]').on('click', function(e) {
+          e.preventDefault();
+          
+          $('html, body').animate(
+            {
+              scrollTop: $($(this).attr('href')).offset().top - 70,
+            },
+            500,
+            'linear'
+          );
+        });
+        
+        // Navbar background on scroll
+        $(window).scroll(function() {
+          if($(this).scrollTop() > 100) {
+            $('.navbar').addClass('bg-dark shadow');
+          } else {
+            $('.navbar').removeClass('bg-dark shadow');
+          }
+        });
+      });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  </body>
+</html>
